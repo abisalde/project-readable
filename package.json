@@ -1,0 +1,10 @@
+{
+    "scripts": {
+        "react": "cd frontend && yarn install && yarn start",
+        "server": "cd api-server && yarn install && yarn dev",
+        "dev": "concurrently --kill-others \"yarn react\" \"yarn server\""
+    },
+    "devDependencies": {
+        "concurrently": "^6.4.0"
+    }
+}
