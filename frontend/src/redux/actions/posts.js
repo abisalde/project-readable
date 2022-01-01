@@ -22,14 +22,14 @@ export const loadAllPosts = () => async (dispatch) => {
   }
 };
 
-const fetchPostCategory = (category) => {
+export const fetchPostCategory = (category) => {
   return {
     type: GET_CATEGORY_POSTS,
     payload: category,
   };
 };
 
-export const handlePostCategory = ({category, posts}) => {
+const handlePostCategory = ({category, posts}) => {
   return {
     type: GET_CATEGORY_POSTS_SUCCESS,
     payload: {
@@ -39,14 +39,16 @@ export const handlePostCategory = ({category, posts}) => {
   };
 };
 
-export const loadAllPostsCategory = (category) => async (dispatch) => {
-  try {
-    await dispatch(showLoading());
-    const {data} = await APIServices._getAllPostsCategory(category);
-    await dispatch(fetchPostCategory(category));
-    await dispatch(handlePostCategory({category, data}));
-    await dispatch(hideLoading());
-  } catch (error) {
-    console.log(`Error from loadAllPostsCategory: ${error}`);
-  }
+export const loadAllPostsCategory = (category) => {
+  return async (dispatch) => {
+    try {
+      await dispatch(showLoading());
+      dispatch(fetchPostCategory(category));
+      const {data} = await APIServices._getAllPostsByCategory(category);
+      await dispatch(handlePostCategory({category, posts: data}));
+      await dispatch(hideLoading());
+    } catch (error) {
+      console.log(`Error from loadAllPostsCategory: ${error}`);
+    }
+  };
 };
