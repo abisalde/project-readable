@@ -1,11 +1,11 @@
 import styled from 'styled-components';
 
-export const Tab = styled.div`
-  border: 2px dotted #ccc;
-  width: 250px;
+export const TabContainer = styled.div`
+  display: flex;
+  align-items: center;
+  padding: 1.325rem 0rem;
 `;
 
-export const Title = styled.h4`
-  text-align: center;
-  font-size: 1rem;
+export const Tab = styled.div`
+  width: 100%;
 `;

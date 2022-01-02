@@ -1,6 +1,6 @@
 import {GET_ALL_CATEGORIES} from '../actions/types';
 
-const CategoriesReducer = (state = {}, action) => {
+const CategoriesReducer = (state = [], action) => {
   switch (action.type) {
     case GET_ALL_CATEGORIES:
       const categories = action.payload.categories.map(
