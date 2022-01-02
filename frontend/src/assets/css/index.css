@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital@1&display=swap');
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell',
+    'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  background: #feffd6;
+}
+
+a {
+  text-decoration: none;
+}
+
+@font-face {
+  font-family: 'Pushster';
+  font-style: normal;
+  src: url('../fonts/Pushster-Regular.ttf') format('truetype');
+}
+
+.tab_selector:hover,
+.tab_selector_active {
+  border-bottom: 0.25rem solid #4a435c;
+}
+
+@media screen and (min-width: 100px) and (max-width: 524px) {
+  .css-8atqhb .css-1uundss-MuiPaper-root-MuiCard-root {
+    flex-direction: column;
+  }
+  .css-1uundss-MuiPaper-root-MuiCard-root .css-5qjvzf-MuiCardContent-root,
+  .css-1uundss-MuiPaper-root-MuiCard-root .css-6a8q8v-MuiCardContent-root {
+    width: 100%;
+  }
+}

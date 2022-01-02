@@ -1,7 +1,7 @@
 import {
   GET_ALL_POSTS,
   GET_CATEGORY_POSTS_SUCCESS,
-  GET_CATEGORY_POSTS,
+  // GET_CATEGORY_POSTS,
 } from './types';
 import APIServices from '../../services/API';
 import {showLoading, hideLoading} from 'react-redux-loading';
@@ -22,12 +22,12 @@ export const loadAllPosts = () => async (dispatch) => {
   }
 };
 
-export const fetchPostCategory = (category) => {
-  return {
-    type: GET_CATEGORY_POSTS,
-    payload: category,
-  };
-};
+// export const fetchPostCategory = (category) => {
+//   return {
+//     type: GET_CATEGORY_POSTS,
+//     payload: category,
+//   };
+// };
 
 const handlePostCategory = ({category, posts}) => {
   return {
@@ -42,11 +42,8 @@ const handlePostCategory = ({category, posts}) => {
 export const loadAllPostsCategory = (category) => {
   return async (dispatch) => {
     try {
-      await dispatch(showLoading());
-      dispatch(fetchPostCategory(category));
       const {data} = await APIServices._getAllPostsByCategory(category);
       await dispatch(handlePostCategory({category, posts: data}));
-      await dispatch(hideLoading());
     } catch (error) {
       console.log(`Error from loadAllPostsCategory: ${error}`);
     }

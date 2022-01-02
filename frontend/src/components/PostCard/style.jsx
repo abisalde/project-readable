@@ -3,6 +3,9 @@ import styled from 'styled-components';
 export const Muted = styled.span`
   font-size: 0.865rem;
   color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  margin-right: 0.85rem;
 `;
 
 export const Icon = styled.div`
