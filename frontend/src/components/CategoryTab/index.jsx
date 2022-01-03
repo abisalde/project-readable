@@ -1,7 +1,7 @@
-import React, {Fragment, useMemo, useEffect, useState} from 'react';
-import {useDispatch, useSelector} from 'react-redux';
+import React, {Fragment} from 'react';
+import {useSelector} from 'react-redux';
 import {NavLink} from 'react-router-dom';
-import {loadAllPostsCategory} from '../../redux/actions/posts';
+
 import {Tab, TabContainer} from './styles.jsx';
 
 const tabBox = {
@@ -13,44 +13,26 @@ const tabBox = {
 };
 
 const CategoryTab = () => {
-  const dispatch = useDispatch();
-
   const categories = useSelector(({categories}) => categories);
-  // const [activeTab, setActiveTab] = useState([]);
 
-  // useMemo((props) => {
-  //   const futureCategory = props.categories;
-  //   const stateCategory = categories;
-  //   if (stateCategory.length === 0 && futureCategory.length !== 0) {
-  //     futureCategory.forEach((category) => {
-  //       dispatch(loadAllPostsCategory(category));
-  //     });
-  //   }
-  // });
-
-  // useEffect(() => {
-  //   if (categories?.length > 0) {
-  //     categories?.forEach((category) => {
-  //       dispatch(loadAllPostsCategory(category));
-  //     });
-  //   }
-  // }, []);
-
-  const Tabs = categories?.map((category) => {
-    return (
-      <Tab key={category}>
-        <NavLink
-          to={`/${category}`}
-          style={tabBox}
-          className={({isActive}) =>
-            isActive ? 'tab_selector' : 'tab_selector'
-          }
-        >
-          {category}
-        </NavLink>
-      </Tab>
-    );
-  });
+  const Tabs =
+    categories &&
+    categories.length > 0 &&
+    categories.map((category) => {
+      return (
+        <Tab key={category.name}>
+          <NavLink
+            to={`/${category.path}`}
+            style={tabBox}
+            className={({isActive}) =>
+              isActive ? 'tab_selector' : 'tab_selector'
+            }
+          >
+            {category.name}
+          </NavLink>
+        </Tab>
+      );
+    });
 
   return (
     <Fragment>

@@ -1,5 +1,6 @@
 import React, {Fragment} from 'react';
 import PropTypes from 'prop-types';
+import {Link} from 'react-router-dom';
 
 // Components
 import CategoryTab from '../CategoryTab';
@@ -20,16 +21,18 @@ const PostDashboard = ({posts, sortPost, sortedPost, category}) => {
       <Container>
         <CategoryTab category={category} />
         <NewPost>
-          <Button
-            variant='contained'
-            startIcon={<FiberNewIcon />}
-            sx={{
-              backgroundColor: 'rgb(74, 67, 92)',
-              cursor: 'pointer',
-            }}
-          >
-            Post
-          </Button>
+          <Link to='/new'>
+            <Button
+              variant='contained'
+              startIcon={<FiberNewIcon />}
+              sx={{
+                backgroundColor: 'rgb(74, 67, 92)',
+                cursor: 'pointer',
+              }}
+            >
+              Post
+            </Button>
+          </Link>
         </NewPost>
         <SortPost sorted={sortedPost} postSortHandler={sortPost} />
         <PostCardList posts={handleSortedPosts(posts, sortedPost)} />

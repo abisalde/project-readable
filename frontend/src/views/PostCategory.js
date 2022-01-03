@@ -12,15 +12,8 @@ const PostCategory = () => {
 
   const posts = useSelector(({posts}) => posts);
   const sorted = useSelector(({sorted}) => sorted);
-  console.log('posts', posts.allPost);
 
-  const sorting = Object.keys(posts?.allPost);
-  const filtered = sorting?.filter(
-    (key) =>
-      posts?.allPost[key]?.category === category &&
-      !posts?.allPost[key]?.deleted
-  );
-  const postsFiltered = filtered?.map((key) => posts?.allPost[key]);
+  const filteredPost = posts[category];
 
   // SortPostFunction
   const sortPostsBy = (e) => {
@@ -29,7 +22,7 @@ const PostCategory = () => {
   return (
     <Layout>
       <PostDashboard
-        posts={postsFiltered}
+        posts={filteredPost}
         category={category}
         sortedPost={sorted}
         sortPost={sortPostsBy}
