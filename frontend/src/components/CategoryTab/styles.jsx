@@ -8,4 +8,7 @@ export const TabContainer = styled.div`
 
 export const Tab = styled.div`
   width: 100%;
+  '&:hover': {
+    border-bottom: 0.25rem solid #4a435c;
+  }
 `;
