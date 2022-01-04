@@ -29,6 +29,14 @@ class APIServices {
   async _addPost(data) {
     return await $http.post(`/api/v1/posts`, data);
   }
+
+  async _getPostById(id, data) {
+    return await $http.get(`/api/v1/posts/${id}`, data);
+  }
+
+  async _deletePostById(id, data) {
+    return await $http.delete(`/api/v1/posts/${id}`, data);
+  }
 }
 
 const instance = new APIServices();

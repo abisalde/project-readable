@@ -7,6 +7,7 @@
         "@emotion/react": "^11.7.1",
         "@emotion/styled": "^11.6.0",
         "@mui/icons-material": "^5.2.5",
+        "@mui/lab": "^5.0.0-alpha.63",
         "@mui/material": "^5.2.5",
         "@testing-library/jest-dom": "^5.14.1",
         "@testing-library/react": "^12.0.0",
@@ -49,5 +50,8 @@
             "last 1 firefox version",
             "last 1 safari version"
         ]
+    },
+    "devDependencies": {
+        "redux-devtools-extension": "^2.13.9"
     }
 }
