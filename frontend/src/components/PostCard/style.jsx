@@ -9,10 +9,10 @@ export const Muted = styled.span`
 `;
 
 export const Icon = styled.div`
-  position: absolute;
-  top: 5px;
-  right: 5px;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  align-self: end;
 `;
 
 export const Image = styled.img`
@@ -28,4 +28,5 @@ export const Bottom = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  margin-top: 2rem;
 `;

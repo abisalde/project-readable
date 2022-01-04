@@ -30,6 +30,10 @@ a {
   border-bottom: 0.25rem solid #4a435c;
 }
 
+.title_link:hover {
+  text-decoration: underline;
+}
+
 @media screen and (min-width: 100px) and (max-width: 524px) {
   .css-8atqhb .css-1uundss-MuiPaper-root-MuiCard-root {
     flex-direction: column;

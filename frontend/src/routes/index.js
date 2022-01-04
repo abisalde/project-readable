@@ -13,6 +13,7 @@ import TopNav from '../components/TopNav';
 import PostCategory from '../views/PostCategory';
 import NewPost from '../views/NewPost';
 import PageNotFound from '../views/404';
+import PostContent from '../views/PostContent';
 
 const Navigation = () => {
   const dispatch = useDispatch();
@@ -40,6 +41,8 @@ const Navigation = () => {
           <Route path='/' element={<App />} />
           <Route path='/:category' element={<PostCategory />} />
           <Route path='/new' element={<NewPost />} />
+          <Route path='/:category/:id' element={<PostContent />} />
+          <Route path='*' element={<PageNotFound />} />
           <Route path='/api/*' element={<PageNotFound />} />
         </Routes>
       </Router>
