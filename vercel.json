@@ -1,0 +1,23 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "./api-server/server.js",
+      "use": "@vercel/node",
+      "options": {
+        "output": "./api-server/dist/server.js",
+        "standalone": "server"
+      }
+    },
+    {
+      "src": "./frontend/build",
+      "use": "@vercel/static"
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/api-server/server.js"
+    }
+  ]
+}

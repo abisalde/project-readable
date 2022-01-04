@@ -34,7 +34,7 @@ const Navigation = () => {
 
   return (
     <Fragment>
-      <Router>
+      <Router basename='/'>
         <LoadingBar />
         <TopNav title='Readable Blog' />
         <Routes>
