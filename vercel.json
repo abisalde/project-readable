@@ -3,11 +3,7 @@
   "builds": [
     {
       "src": "./api-server/server.js",
-      "use": "@vercel/node",
-      "options": {
-        "output": "./api-server/dist/server.js",
-        "standalone": "server"
-      }
+      "use": "@vercel/node"
     },
     {
       "src": "./frontend/build",

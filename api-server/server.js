@@ -306,6 +306,7 @@ app.listen(config.port, () => {
 });
 
 const path = require('path');
+app.use('/api/v1', require(path.join(__dirname, 'posts', 'comments', 'categories'));
 
 if (process.env.NODE_ENV === 'production') {
   app.use(express.static(path.join(__dirname, '../frontend', 'build')));
