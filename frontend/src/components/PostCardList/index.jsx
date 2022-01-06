@@ -1,7 +1,7 @@
 import React, {Fragment} from 'react';
 import PropTypes from 'prop-types';
 import PostCard from '../PostCard';
-import {ListContainer, List} from './style';
+import {ListContainer, List} from './styles';
 
 const PostCardList = ({posts}) => {
   if (posts && posts.length < 0) {

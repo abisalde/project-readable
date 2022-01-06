@@ -1,7 +1,7 @@
 import React, {Fragment, useEffect} from 'react';
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import {useDispatch, useSelector} from 'react-redux';
-import {LoadingBar} from 'react-redux-loading';
+import LoadingBar from 'react-redux-loading';
 
 // Actions
 import {loadAllCategories} from '../redux/actions/category';

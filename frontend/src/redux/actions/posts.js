@@ -38,8 +38,10 @@ const addPost = (post) => {
 
 export const handleAddPost = (post) => async (dispatch) => {
   try {
+    await dispatch(showLoading());
     const {data} = await APIServices._addPost(post);
     await dispatch(addPost({post: data}));
+    await dispatch(hideLoading());
   } catch (error) {
     console.log(`Error from handleAddPost: ${error}`);
   }
@@ -54,8 +56,10 @@ const deletePost = (post) => {
 
 export const handleDeletePost = (id) => async (dispatch) => {
   try {
+    await dispatch(showLoading());
     const {data} = await APIServices._deletePostById(id);
     await dispatch(deletePost({post: data}));
+    await dispatch(hideLoading());
   } catch (error) {
     console.log(`Error from handleDeletePost: ${error}`);
   }
