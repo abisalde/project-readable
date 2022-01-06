@@ -1,15 +1,5 @@
 import styled from 'styled-components';
 
-export const Container = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-  max-width: 600px;
-  margin-top: 2rem;
-  margin-bottom: 4rem;
-`;
-
 export const ListDivide = styled.div`
   display: flex;
   flex-direction: row;
@@ -50,8 +40,4 @@ export const Image = styled.img`
   max-height: 25.3125rem;
   border-radius: 0.3125rem;
   vertical-align: middle;
-`;
-
-export const CommentsContainer = styled.div`
-  width: 100%;
 `;

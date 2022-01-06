@@ -90,6 +90,7 @@ function add(token, post) {
       body: post.body,
       author: post.author,
       category: post.category,
+      postImage: 'https://picsum.photos/200/300',
       voteScore: 1,
       deleted: false,
       commentCount: 0,

@@ -37,6 +37,22 @@ class APIServices {
   async _deletePostById(id, data) {
     return await $http.delete(`/api/v1/posts/${id}`, data);
   }
+
+  async _updatePostById(id, data) {
+    return await $http.put(`/api/v1/posts/${id}`, data);
+  }
+
+  async _getAllCommentsByPostId(id, data) {
+    return await $http.get(`/api/v1/posts/${id}/comments`, data);
+  }
+
+  async _addCommentToPostId(data) {
+    return await $http.post(`/api/v1/comments`, data);
+  }
+
+  async _deleteCommentToPostById(id, data) {
+    return await $http.delete(`/api/v1/comments/${id}`, data);
+  }
 }
 
 const instance = new APIServices();

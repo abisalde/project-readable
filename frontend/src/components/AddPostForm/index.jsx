@@ -1,7 +1,9 @@
 import React, {Fragment, useState} from 'react';
+import PropTypes from 'prop-types';
 import {Navigate} from 'react-router-dom';
 import {handleAddPost} from '../../redux/actions/posts';
 import {useDispatch} from 'react-redux';
+import {LoadingBar} from 'react-redux-loading';
 import {
   TextField,
   FormControl,
@@ -37,7 +39,7 @@ const PostForm = ({categories}) => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    // const post = ;
+    const post = {...values, id: generateUID(), timestamp: Date.now()};
 
     if (values.body.trim() === '' || values.body.trim().length < 60) {
       setBodyError('Body characters must be at least 60');
@@ -46,9 +48,7 @@ const PostForm = ({categories}) => {
     if (values.body.trim() === '' || values.body.trim().length >= 60) {
       setBodyError('');
       setLoading(true);
-      dispatch(
-        handleAddPost({...values, id: generateUID(), timestamp: Date.now()})
-      ).then(() => {
+      dispatch(handleAddPost(post)).then(() => {
         setLoading(false);
         setValues({
           title: '',
@@ -56,7 +56,10 @@ const PostForm = ({categories}) => {
           body: '',
           author: '',
         });
-        setValidate(true);
+        setTimeout(() => {
+          <LoadingBar />;
+          setValidate(true);
+        }, 1000);
       });
     }
   };
@@ -72,6 +75,9 @@ const PostForm = ({categories}) => {
     name: 'category',
     inputProps: {'aria-label': value},
   });
+
+  const disabled =
+    !values.title || !values.body || !values.author || !values.category;
 
   return (
     <Fragment>
@@ -104,6 +110,7 @@ const PostForm = ({categories}) => {
             {bodyError && <small style={{color: 'red'}}>{bodyError}</small>}
             <TextField
               label='Body'
+              error={bodyError ? true : false}
               fullWidth
               id='demo-helper-text-misaligned-no-helper'
               margin='dense'
@@ -176,12 +183,7 @@ const PostForm = ({categories}) => {
             loadingPosition='end'
             variant='contained'
             color='success'
-            disabled={
-              !values.title ||
-              !values.body ||
-              !values.author ||
-              !values.category
-            }
+            disabled={disabled}
             fullWidth
             endIcon={<SendIcon />}
             sx={{marginTop: 2}}
@@ -192,6 +194,10 @@ const PostForm = ({categories}) => {
       </FormContainer>
     </Fragment>
   );
+};
+
+PostForm.propTypes = {
+  categories: PropTypes.array.isRequired,
 };
 
 export default PostForm;
