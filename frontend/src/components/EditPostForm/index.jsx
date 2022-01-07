@@ -31,9 +31,8 @@ const EditPostForm = ({post}) => {
     setPostEdited(false);
 
     if (values.title.trim() !== '' || values.body.trim() !== '') {
-      dispatch(handleUpdatePost(values)).then(() => {
-        setPostEdited(true);
-      });
+      dispatch(handleUpdatePost(values));
+      setPostEdited(true);
     }
   };
 
