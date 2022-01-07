@@ -8,11 +8,11 @@ const UpDownVote = ({upVote, downVote}) => {
   return (
     <Fragment>
       <Tooltip title='Up Vote' arrow id='Up Vote'>
-        <IconButton color='primary' size='small'>
+        <IconButton color='primary' size='small' onClick={upVote}>
           <ThumbUpAltOutlinedIcon color='success' fontSize='small' />
         </IconButton>
       </Tooltip>
-      <Tooltip title='Down Vote' arrow id='Down Vote'>
+      <Tooltip title='Down Vote' arrow id='Down Vote' onClick={downVote}>
         <IconButton color='primary' size='small'>
           <ThumbDownAltOutlinedIcon color='warning' fontSize='small' />
         </IconButton>

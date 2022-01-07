@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import {Navigate} from 'react-router-dom';
 import {handleAddPost} from '../../redux/actions/posts';
 import {useDispatch} from 'react-redux';
-import {LoadingBar} from 'react-redux-loading';
 import {
   TextField,
   FormControl,
@@ -57,7 +56,6 @@ const PostForm = ({categories}) => {
           author: '',
         });
         setTimeout(() => {
-          <LoadingBar />;
           setValidate(true);
         }, 1000);
       });
