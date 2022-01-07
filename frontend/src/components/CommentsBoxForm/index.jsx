@@ -6,8 +6,10 @@ import {Box, FormControl, TextField} from '@mui/material';
 import LoadingButton from '@mui/lab/LoadingButton';
 import {generateUID} from '../../utils/functions';
 import {handleAddCommentToPost} from '../../redux/actions/comments';
+import {loadAllPostsCategory} from '../../redux/actions/posts';
 
-const CommentsBoxForm = ({parentId}) => {
+const CommentsBoxForm = ({parentId, category}) => {
+  console.log('COMMENTBOX:::CATE', category);
   const dispatch = useDispatch();
   const [values, setValues] = useState({body: '', author: ''});
   const [commentError, setCommentError] = useState('');
@@ -41,6 +43,7 @@ const CommentsBoxForm = ({parentId}) => {
           setValues({body: '', author: ''});
           setCommentError('');
           setAuthorError('');
+          dispatch(loadAllPostsCategory(category));
         });
       }
     }

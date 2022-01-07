@@ -1,7 +1,7 @@
 import React, {Fragment} from 'react';
 import PropTypes from 'prop-types';
 import {useDispatch} from 'react-redux';
-import {Navigate, Link} from 'react-router-dom';
+import {Navigate, Link, useNavigate} from 'react-router-dom';
 import {
   Box,
   Card,
@@ -21,11 +21,16 @@ import {Icon, Image, Muted, Bottom} from './style';
 
 //Actions & Functions
 import {formatDate} from '../../utils/functions';
-import {handleDeletePost} from '../../redux/actions/posts';
+import {
+  handleDeletePost,
+  handlePostUpVote,
+  handlePostDownVote,
+} from '../../redux/actions/posts';
 import UpDownVote from '../shared/UpDownVote';
 
 const PostCard = ({post}) => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const {
     id,
     title,
@@ -41,6 +46,18 @@ const PostCard = ({post}) => {
   const deletePost = (id) => {
     dispatch(handleDeletePost(id));
     return <Navigate to='/' />;
+  };
+
+  const editPost = (id) => {
+    return navigate(`${category}/${id}/edit`);
+  };
+
+  const upVotePost = (id) => {
+    dispatch(handlePostUpVote(id));
+  };
+
+  const downVotePost = (id) => {
+    dispatch(handlePostDownVote(id));
   };
 
   return (
@@ -105,7 +122,7 @@ const PostCard = ({post}) => {
                   </IconButton>
                 </Tooltip>
                 <Tooltip title='Edit' arrow id='Edit'>
-                  <IconButton size='small'>
+                  <IconButton size='small' onClick={() => editPost(id)}>
                     <CreateIcon fontSize='small' />
                   </IconButton>
                 </Tooltip>
@@ -126,7 +143,7 @@ const PostCard = ({post}) => {
               </Link>
               <Button
                 variant='outlined'
-                color='secondary'
+                color={voteScore >= 10 ? 'success' : 'warning'}
                 sx={{
                   fontSize: '0.752rem',
                   textTransform: 'Capitalize',
@@ -144,8 +161,8 @@ const PostCard = ({post}) => {
               </Muted>
               <CardActions>
                 <UpDownVote
-                  upVote={(test) => console.log('test')}
-                  downVote={() => console.log(test)}
+                  upVote={() => upVotePost(id)}
+                  downVote={() => downVotePost(id)}
                 />
               </CardActions>
             </Bottom>

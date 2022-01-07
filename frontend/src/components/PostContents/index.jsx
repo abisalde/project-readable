@@ -1,14 +1,18 @@
 import React, {Fragment, useRef, useState} from 'react';
 import PropTypes from 'prop-types';
 import {useDispatch} from 'react-redux';
-import {Navigate} from 'react-router-dom';
+import {Navigate, useNavigate} from 'react-router-dom';
 
 // Action & Functions
-import {handleDeletePost} from '../../redux/actions/posts';
+import {
+  handleDeletePost,
+  handlePostUpVote,
+  handlePostDownVote,
+} from '../../redux/actions/posts';
 import {formatDate} from '../../utils/functions';
 
 // Components
-import {Typography, IconButton, Tooltip, Divider} from '@mui/material';
+import {Typography, IconButton, Tooltip} from '@mui/material';
 import ChatBubbleTwoToneIcon from '@mui/icons-material/ChatBubbleTwoTone';
 import CreateIcon from '@mui/icons-material/Create';
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
@@ -24,11 +28,21 @@ import {
   Image,
 } from './styles';
 
-const PostContent = ({post, commentCount}) => {
-  const {id, body, postImage, timestamp, title, voteScore, author, category} =
-    post;
+const PostContent = ({post}) => {
+  const {
+    id,
+    body,
+    postImage,
+    timestamp,
+    title,
+    voteScore,
+    author,
+    category,
+    commentCount,
+  } = post;
 
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const [redirect, setRedirect] = useState(false);
   const ref = useRef();
 
@@ -39,10 +53,25 @@ const PostContent = ({post, commentCount}) => {
     });
   };
 
+  // Upvote Post
+  const upVotePost = (id) => {
+    dispatch(handlePostUpVote(id));
+  };
+
+  // Downvote Post
+  const downVotePost = (id) => {
+    dispatch(handlePostDownVote(id));
+  };
+
   // Delete Post
   const deletePost = (id) => {
     dispatch(handleDeletePost(id));
     setRedirect(true);
+  };
+
+  // Edit Post
+  const editPost = (id) => {
+    return navigate(`/${category}/${id}/edit`);
   };
 
   if (redirect === true) {
@@ -66,7 +95,7 @@ const PostContent = ({post, commentCount}) => {
               <DeleteForeverIcon fontSize='small' />
             </IconButton>
           </Tooltip>
-          <Tooltip title='Edit' arrow id='Edit'>
+          <Tooltip title='Edit' arrow id='Edit' onClick={() => editPost(id)}>
             <IconButton size='small'>
               <CreateIcon fontSize='small' />
             </IconButton>
@@ -83,7 +112,7 @@ const PostContent = ({post, commentCount}) => {
               width: '5rem',
               textAlign: 'center',
               height: '2rem',
-              backgroundColor: '#f5f5f5',
+              backgroundColor: voteScore >= 10 ? '#00e676' : '#ff1744',
               borderRadius: '0.5rem',
             }}
           >
@@ -97,7 +126,10 @@ const PostContent = ({post, commentCount}) => {
               <ChatBubbleTwoToneIcon />
             </IconButton>
           </Tooltip>
-          <UpDownVote />
+          <UpDownVote
+            upVote={() => upVotePost(id)}
+            downVote={() => downVotePost(id)}
+          />
         </DivideLeft>
       </ListDivide>
       <ImageContainer>
@@ -170,7 +202,7 @@ const PostContent = ({post, commentCount}) => {
           {commentCount > 1 ? '  Comments' : '  Comment'}
         </Typography>
       </Typography>
-      <Divider ref={ref} />
+      <hr ref={ref} />
     </Fragment>
   );
 };

@@ -12,17 +12,16 @@ import Post from '../components/PostContents';
 import CategoryTab from '../components/CategoryTab';
 import Layout from '../components/Layout';
 import CommentsBoxForm from '../components/CommentsBoxForm';
-import CommentsCard from '../components/CommentsCard';
+import CommentsList from '../components/CommentsList';
 
 // styles
 import {Container, CommentsContainer} from '../components/shared/styles';
 
 const PostContent = () => {
-  const {id} = useParams();
+  const {id, category} = useParams();
   const dispatch = useDispatch();
   const post = useSelector(({post}) => post);
   const comments = useSelector(({comments}) => comments);
-  const count = comments && comments.length;
 
   // Get Post by ID and Comments by Post ID
   useEffect(() => {
@@ -36,10 +35,10 @@ const PostContent = () => {
         <CategoryTab />
         <Container>
           <LoadingBar scope='sectionBar' />
-          <Post post={post} commentCount={count} />
+          <Post post={post} />
           <CommentsContainer>
-            <CommentsBoxForm parentId={id} />
-            <CommentsCard comments={comments} />
+            <CommentsBoxForm parentId={id} category={category} />
+            <CommentsList comments={comments} />
           </CommentsContainer>
         </Container>
       </Layout>

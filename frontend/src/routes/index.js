@@ -14,6 +14,7 @@ import PostCategory from '../views/PostCategory';
 import NewPost from '../views/NewPost';
 import PageNotFound from '../views/404';
 import PostContent from '../views/PostContent';
+import EditPost from '../views/EditPost';
 
 const Navigation = () => {
   const dispatch = useDispatch();
@@ -39,11 +40,12 @@ const Navigation = () => {
         <TopNav title='Readable Blog' />
         <Routes>
           <Route path='/' element={<App />} />
-          <Route path='/:category' element={<PostCategory />} />
-          <Route path='/new' element={<NewPost />} />
-          <Route path='/:category/:id' element={<PostContent />} />
+          <Route path=':category' element={<PostCategory />} />
+          <Route path='new' element={<NewPost />} />
+          <Route path=':category/:id' element={<PostContent />} />
+          <Route path=':category/:id/edit' element={<EditPost />} />
           <Route path='*' element={<PageNotFound />} />
-          <Route path='/api/*' element={<PageNotFound />} />
+          <Route path='api/*' element={<PageNotFound />} />
         </Routes>
       </Router>
     </Fragment>

@@ -2,6 +2,9 @@ import {
   GET_CATEGORY_POSTS_SUCCESS,
   ADD_POST_SUCCESS,
   DELETE_POST,
+  POST_UP_VOTE,
+  POST_DOWN_VOTE,
+  UPDATE_POST_SUCCESS,
 } from '../actions/types';
 
 const PostsReducer = (state = {}, action) => {
@@ -18,6 +21,20 @@ const PostsReducer = (state = {}, action) => {
       return {
         ...state,
         [post.category]: newPost,
+      };
+    case UPDATE_POST_SUCCESS:
+    case POST_UP_VOTE:
+    case POST_DOWN_VOTE:
+      const {post: postToUpdate} = action.payload;
+      const updatedPost = state[postToUpdate.category].map((post) => {
+        if (post.id === postToUpdate.id) {
+          return postToUpdate;
+        }
+        return post;
+      });
+      return {
+        ...state,
+        [postToUpdate.category]: updatedPost,
       };
     case DELETE_POST:
       const {post: postToDelete} = action.payload;

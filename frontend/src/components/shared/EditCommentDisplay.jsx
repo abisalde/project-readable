@@ -5,7 +5,6 @@ import {Box, Button, FormControl, TextField} from '@mui/material';
 const EditCommentDisplay = ({body, hideEditForm}) => {
   const [editBody, setEditBody] = useState(body);
 
-  console.log('EditCommentDisplay: ', body);
   const handleChange = (e) => {
     setEditBody(e.target.value);
   };
@@ -48,7 +47,7 @@ const EditCommentDisplay = ({body, hideEditForm}) => {
 
 EditCommentDisplay.propTypes = {
   body: PropTypes.string.isRequired,
-  id: PropTypes.string.isRequired,
+  hideEditForm: PropTypes.func.isRequired,
 };
 
 export default EditCommentDisplay;
