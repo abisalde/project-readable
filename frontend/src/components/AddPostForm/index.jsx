@@ -1,8 +1,13 @@
 import React, {Fragment, useState} from 'react';
 import PropTypes from 'prop-types';
-import {Navigate} from 'react-router-dom';
-import {handleAddPost} from '../../redux/actions/posts';
 import {useDispatch} from 'react-redux';
+import {Navigate} from 'react-router-dom';
+
+// Action $ Functions
+import {handleAddPost} from '../../redux/actions/posts';
+import {generateUID} from '../../utils/functions';
+
+// Material UI
 import {
   TextField,
   FormControl,
@@ -14,10 +19,11 @@ import {
   Box,
 } from '@mui/material';
 import LoadingButton from '@mui/lab/LoadingButton';
-import {FormContainer, CategoryContainer} from './styles';
 import {purple} from '@mui/material/colors';
 import SendIcon from '@mui/icons-material/Send';
-import {generateUID} from '../../utils/functions';
+
+// Styled Components
+import {FormContainer, CategoryContainer} from './styles';
 
 const PostForm = ({categories}) => {
   const dispatch = useDispatch();

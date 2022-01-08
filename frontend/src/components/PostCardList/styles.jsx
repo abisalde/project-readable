@@ -8,3 +8,10 @@ export const List = styled.li`
   margin-bottom: 1.5rem;
   cursor: pointer;
 `;
+
+export const Image = styled.img`
+  width: 100%;
+  height: auto;
+  max-height: 380px;
+  vertical-align: middle;
+`;

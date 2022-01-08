@@ -101,7 +101,7 @@ const updatePost = (post) => {
 export const handleUpdatePost = (post) => async (dispatch) => {
   try {
     await dispatch(showLoading());
-    const {data} = await APIServices._getPostById(post);
+    const {data} = await APIServices._updatePostById(post.id, post);
     await dispatch(updatePost({post: data}));
     await dispatch(hideLoading());
   } catch (error) {

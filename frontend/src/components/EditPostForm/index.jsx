@@ -1,5 +1,5 @@
-import React, {Fragment, useState} from 'react';
-import {useNavigate} from 'react-router-dom';
+import React, {Fragment, useState, useEffect} from 'react';
+import {Navigate} from 'react-router-dom';
 import {useDispatch} from 'react-redux';
 import PropTypes from 'prop-types';
 import LoadingButton from '@mui/lab/LoadingButton';
@@ -14,30 +14,52 @@ import {handleUpdatePost} from '../../redux/actions/posts';
 
 const EditPostForm = ({post}) => {
   const dispatch = useDispatch();
-  const navigate = useNavigate();
+
   const {body, title, category, id, author} = post;
   const [postEdited, setPostEdited] = useState(false);
-  const [values, setValues] = useState({
+  const [values, setValues] = useState(() => ({
     title,
     body,
-  });
+    author,
+    category,
+    id,
+  }));
 
+  // Load effect on props change
+  useEffect(() => {
+    const {category, title, id, author, body} = post;
+    setValues({
+      title,
+      body,
+      category,
+      id,
+      author,
+    });
+  }, [post]);
+
+  // handle change
   const handleChange = (event) => {
     setValues({...values, [event.target.name]: event.target.value});
   };
 
+  // Handle submit
   const handleSubmit = (e) => {
     e.preventDefault();
     setPostEdited(false);
 
+    const {title, body} = values;
+
+    let post = {title, body, id};
+
     if (values.title.trim() !== '' || values.body.trim() !== '') {
-      dispatch(handleUpdatePost(values));
-      setPostEdited(true);
+      dispatch(handleUpdatePost(post)).then(() => {
+        setPostEdited(true);
+      });
     }
   };
 
   if (postEdited === true) {
-    return navigate('/');
+    return <Navigate replace to='/' />;
   }
 
   return (
@@ -105,7 +127,7 @@ const EditPostForm = ({post}) => {
             name='author'
             inputProps={{readOnly: true}}
             variant='filled'
-            value={author}
+            value={values.author}
             onChange={handleChange}
           />
           <Typography

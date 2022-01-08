@@ -1,6 +1,15 @@
 import {GET_SINGLE_POST} from '../actions/types';
 
-const Post = (state = {}, action) => {
+const initialState = {
+  id: '',
+  timestamp: '',
+  title: '',
+  body: '',
+  category: '',
+  author: '',
+};
+
+const Post = (state = initialState, action) => {
   switch (action.type) {
     case GET_SINGLE_POST:
       const {post} = action.payload;

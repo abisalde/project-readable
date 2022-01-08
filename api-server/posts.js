@@ -9,7 +9,7 @@ const defaultData = {
     title: 'Udacity is the best place to learn React',
     body: 'Everyone says so after all.',
     author: 'thingtwo',
-    category: 'react',
+    category: 'udacity',
     postImage:
       'https://via.placeholder.com/295x195/F0D956/000000?text=udacity.com',
     voteScore: 6,
@@ -35,7 +35,7 @@ const defaultData = {
     title: 'Learn React in 10 minutes!',
     body: 'Just kidding. It takes more than 10 minutes to learn technology.',
     author: 'sammy',
-    category: 'udacity',
+    category: 'react',
     postImage:
       'https://via.placeholder.com/295x195/F08856/000000?text=reactjs.org',
     voteScore: 1,
