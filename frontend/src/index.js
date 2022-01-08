@@ -9,7 +9,6 @@ import store from './redux/store';
 import './assets/css/index.css';
 
 // Component
-// import App from './App';
 import Navigation from './routes';
 
 ReactDOM.render(
