@@ -25,7 +25,7 @@ const CategoryTab = () => {
             to={`/${category.path}`}
             style={tabBox}
             className={({isActive}) =>
-              isActive ? 'tab_selector' : 'tab_selector'
+              isActive ? 'tab_selector_active' : 'tab_selector'
             }
           >
             {category.name}
@@ -42,7 +42,7 @@ const CategoryTab = () => {
             to='/'
             style={tabBox}
             className={({isActive}) =>
-              isActive ? 'tab_selector' : 'tab_selector'
+              isActive ? 'tab_selector_active' : 'tab_selector'
             }
           >
             Home

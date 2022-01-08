@@ -1,14 +1,33 @@
 import React, {Fragment} from 'react';
 import PropTypes from 'prop-types';
 import PostCard from '../PostCard';
-import {ListContainer, List} from './styles';
+import {Card, Box, CardContent} from '@mui/material';
+import {ListContainer, List, Image} from './styles';
 
 const PostCardList = ({posts}) => {
-  if (posts && posts.length < 0) {
+  if (posts && posts.length < 1) {
     return (
       <Fragment>
         <ListContainer>
-          <List>NO POST</List>
+          <List>
+            <Box sx={{width: '100%'}}>
+              <Card
+                sx={{
+                  display: 'flex',
+                  flexDirection: 'row',
+                  position: 'relative',
+                  maxWidth: 695,
+                }}
+              >
+                <CardContent>
+                  <Image
+                    src='https://i.ytimg.com/vi/oBhbgIESRI4/maxresdefault.jpg'
+                    alt='no posts'
+                  />
+                </CardContent>
+              </Card>
+            </Box>
+          </List>
         </ListContainer>
       </Fragment>
     );

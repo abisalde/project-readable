@@ -23,6 +23,18 @@ const PostsReducer = (state = {}, action) => {
         [post.category]: newPost,
       };
     case UPDATE_POST_SUCCESS:
+      const {post: editPost} = action.payload;
+      const {category: editCategory} = editPost;
+      const editedPost = state[editCategory].map((post) => {
+        if (post.id === editPost.id) {
+          return editPost;
+        }
+        return post;
+      });
+      return {
+        ...state,
+        [editCategory]: editedPost,
+      };
     case POST_UP_VOTE:
     case POST_DOWN_VOTE:
       const {post: postToUpdate} = action.payload;
