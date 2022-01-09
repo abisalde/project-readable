@@ -22,8 +22,8 @@ const UpDownVote = ({upVote, downVote}) => {
 };
 
 UpDownVote.propTypes = {
-  upVote: PropTypes.func,
-  downVote: PropTypes.func,
+  upVote: PropTypes.func.isRequired,
+  downVote: PropTypes.func.isRequired,
 };
 
 export default UpDownVote;
