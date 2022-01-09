@@ -1,22 +1,50 @@
-# Readable API Server
+# Readable Blog Project
 
-This is the starter project for the final assessment project for Udacity's Redux course where you will build a content and comment web app. Users will be able to post content to predefined categories, comment on their posts and other users' posts, and vote on posts and comments. Users will also be able to edit and delete posts and comments.
+This is a project for the final assessment project for Udacity's Redux course where users will be able to add content and comment. Users will be able to post content to predefined categories, comment on their posts and other users' posts, and vote on posts and comments. Users will also be able to edit and delete posts and comments.
 
-This repository includes the code for the backend API Server that you'll use to develop and interact with the front-end portion of the project.
+![FrontImage](./frontend/src/assets/img/readable-blog.png)
 
-## Start Developing
+## Built With:
 
-To get started developing right away:
+- React
+- Redux
+- React Router V6
+- Express
+- Node
+- Material-UI
+- Styled Components
 
-* Install and start the API server
-    - `cd api-server`
-    - `npm install`
-    - `node server`
-* In another terminal window, use Create React App to scaffold out the front-end
-    - `create-react-app frontend`
-    - `cd frontend`
-    - `npm start`
+## Live Demo:
 
-## API Server
+[ReactND - Readable Blog](https://readable-blog.vercel.app/)
 
-Information about the API server and how to use it can be found in its [README file](api-server/README.md).
+## Getting Started
+
+To get started locally on your PC, run the following commands in the terminal:
+
+- Install Dependencies and start the server
+
+* `open your terminal`
+* `yarn dev` to run the development build concurrently
+* `yarn dev` starts both the frontend and server the PORT at `localhost:300`
+
+## Author
+
+👤️ Isaiah Abiodun
+_ [Github](https://github.com/abisalde)
+_ [LinkedIn](https://www.linkedin.com/in/abisalde/) \* [Twitter](https://twitter.com/abisalde)
+
+## 🤝️ Contributing
+
+Contributions are welcome! Please open an issue or pull request on Github.
+
+## Acknoledgements
+
+- [Udacity](https://www.udacity.com/)
+- [React.js](https://reactjs.org/)
+  - [Redux](https://redux.js.org/)
+  - [React Router](https://reacttraining.com/react-router/)
+
+## Show your support
+
+If you like this project, please show your support by starring ⭐️ the project on Github.

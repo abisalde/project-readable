@@ -1,7 +1,7 @@
 import {GET_SINGLE_POST} from '../actions/types';
 
 const initialState = {
-  id: '',
+  id: null,
   timestamp: '',
   title: '',
   body: '',

@@ -4,8 +4,8 @@
 
 To get started developing right away:
 
--   install all project dependencies with `npm install` or `yarn install`
--   start the development server with `npm start` or `yarn start`
+- install all project dependencies with `npm install` or `yarn install`
+- start the development server with `npm start` or `yarn start`
 
 ## What You're Getting
 
@@ -18,31 +18,86 @@ To get started developing right away:
 │   ├── favicon.ico # React Icon, You may change if you wish.
 │   └── index.html # DO NOT MODIFY
 └── src
-    ├── components # Components used for this Book App
-        ├── addBook.js # Add Book to My Reads
-        ├── bookShelfChange.js # Change Book Shelf
-        ├── bookShelf.js # Current Book Shelf
-        ├── loader.js # Loader for the Home page while fetching data
-        ├── searchBookResults.js # Search for a Book
-        └── singleBookContainer.js # Book Container
-    ├── pages # Pages view for this Book App
-        ├── Search # Search Page
-            └── index.js # Index point for Search Page
-        └── Home # Home Page
-            └── index.js # Index point for Home Page
-    ├── utils # Utility functions for this Book App
-        └── BooksAPI.js # A JavaScript API for the provided Udacity backend. Instructions for the methods are below.
+    ├── assets # CSS, Fonts, Images, etc.
+    │   ├── css
+    │   │   ├── index.css # This is the main CSS file.
+    │   ├── fonts
+    │   │   ├── Pushster-Regular.tff # Font file
+        └── img
+            └── readable-blog.png # Front Image
+    ├── components # Components are reusable UI components.
+        ├── AddPostForm # AddPostForm component.
+            ├── index.jsx #JSX file.
+            ├── styles.jsx #Styled Components file.
+        ├── CategoryTab # CategoryTab component.
+            ├── index.jsx #JSX file.
+            ├── styles.jsx #Styled Components file.
+        ├── CommentsBoxForm # CommentsBoxForm component.
+            ├── index.jsx #JSX file.
+        ├── CommentsCard # CommentsCard component.
+            ├── index.jsx #JSX file.
+            ├── styles.jsx #Styled Components file.
+        ├── CommentsList # CommentsList component.
+            ├── index.jsx #JSX file.
+        ├── EditPostForm # EditPostForm component.
+            ├── index.jsx #JSX file.
+        ├── Layout # Layout component.
+            ├── index.jsx #JSX file.
+            ├── styles.css #CSS Components file.
+        ├── PostCard # PostCard component.
+            ├── index.jsx #JSX file.
+            ├── styles.jsx #Styled Components file.
+        ├── PostCarList # PostCardList component.
+            ├── index.jsx #JSX file.
+            ├── styles.jsx #Styled Components file.
+        ├── PostContents # Post Contents component.
+            ├── index.jsx #JSX file.
+            ├── styles.jsx #Styled Components file.
+        ├── PostDashboard # PostDashboard component.
+            ├── index.jsx #JSX file.
+            ├── styles.jsx #Styled Components file.
+        ├── Shared # Shared components.
+            ├── CommentsDisplay.jsx #JSX file.
+            ├── EditCommentDisplay.jsx #JSX file.
+            ├── styles.jsx #Global styled components file.
+            ├── UpDownVote.jsx #JSX file.
+        ├── SortPost #SortPost component.
+            ├── index.jsx #JSX file.
+            ├── styles.jsx #Styled Components file.
+        └── TopNav # TopNav component.
+            ├── index.jsx #JSX file.
+            ├── styles.jsx #Styled Components file.
+    ├── redux # Redux folder.
+        ├── actions
+            ├── category.js # category actions file.
+            ├── comments.js # comments actions file.
+            ├── post.js # single post actions file.
+            ├── posts.js # all posts actions file.
+            ├──sort.js # sort post action file
+            └── types.js # dispatch types file.
+        └── middleware # middleware folder.
+            └── index.js # Middleware for the App store
+        └── reducers # Reducers for the App store.
+            ├── category.js # category reducer file.
+            ├── comments.js # comments reducer file.
+            ├── post.js # single post reducer file.
+            ├── posts.js # all posts reducer file.
+            ├──sort.js # sort post reducer file
+            └── index.js # Combined Root Reducer
+        └── store # Store folder.
+            └── index.js # Middleware for the App store
+    ├── routes # Routes file.
+        └── index.js # All navigation is handled here.
     ├── services # Utility functions for this Book App
-        └── APIService.js # A JavaScript API for the provided Udacity backend. Instructions for the methods are below.
-
-    ├── App.css # Styles for your app. Feel free to customize this as you desire.
-    ├── App.js # This is the root of your app. Contains static HTML right now.
-
-    ├── icons # Helpful images for your app. Use at your discretion.
-    │   ├── add.svg
-    │   ├── arrow-back.svg
-    │   ├── arrow-drop-down.svg
-        └── loader.gif
-    ├── index.css # Global styles. You probably won't need to change anything here.
-    └── index.js # You should not need to modify this file. It is used for DOM rendering only.
+        └── API.js # A service API call for all API.
+    ├── utils # Utility functions readable blog
+        └── index.js # Utility functions for the blog app
+    ├── views
+        ├── 404.js # 404 page.
+        ├── App.js # Main Home Page for the App
+        ├── EditPost.js # Edit Post Page
+        ├── NewPost.js # New Post Page
+        ├── PostCategory.js # Post Category Page
+        └── PostContents.js # Post Contents Page
+└── index.js # You should not need to modify this file. It is used for DOM rendering only.
 ```

@@ -153,7 +153,7 @@ const PostCard = ({post}) => {
               </Button>
             </ButtonGroup>
             <Typography variant='body2' component='p'>
-              {body.slice(0, 45)}...
+              {body.slice(0, 70)}
             </Typography>
             <Bottom>
               <Muted>
