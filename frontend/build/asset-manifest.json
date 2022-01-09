@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/static/css/main.e76a9aae.css",
+    "main.css": "/static/css/main.bc41a6b6.css",
     "main.js": "/static/js/main.e656cbdd.js",
     "static/media/Pushster-Regular.ttf": "/static/media/Pushster-Regular.03c38496322925fec242.ttf",
     "index.html": "/index.html",
-    "main.e76a9aae.css.map": "/static/css/main.e76a9aae.css.map",
+    "main.bc41a6b6.css.map": "/static/css/main.bc41a6b6.css.map",
     "main.e656cbdd.js.map": "/static/js/main.e656cbdd.js.map"
   },
   "entrypoints": [
-    "static/css/main.e76a9aae.css",
+    "static/css/main.bc41a6b6.css",
     "static/js/main.e656cbdd.js"
   ]
 }
