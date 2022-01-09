@@ -26,13 +26,15 @@ To get started locally on your PC, run the following commands in the terminal:
 
 * `open your terminal`
 * `yarn dev` to run the development build concurrently
-* `yarn dev` starts both the frontend and server the PORT at `localhost:300`
+* `yarn dev` starts both the frontend and server and displays the frontend on `localhost:3000` and backend on `localhost:3001`
 
 ## Author
 
 👤️ Isaiah Abiodun
-_ [Github](https://github.com/abisalde)
-_ [LinkedIn](https://www.linkedin.com/in/abisalde/) \* [Twitter](https://twitter.com/abisalde)
+
+- [Github](https://github.com/abisalde)
+- [LinkedIn](https://www.linkedin.com/in/abisalde/)
+- [Twitter](https://twitter.com/abisalde)
 
 ## 🤝️ Contributing
 
