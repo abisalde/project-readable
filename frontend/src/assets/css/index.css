@@ -13,7 +13,7 @@ body {
   font-family: 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell',
     'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
   background: #feffd6;
-  height: 100vh;
+  min-height: 100vh;
 }
 
 a {
@@ -41,6 +41,16 @@ a {
   }
   .css-1uundss-MuiPaper-root-MuiCard-root .css-5qjvzf-MuiCardContent-root,
   .css-1uundss-MuiPaper-root-MuiCard-root .css-6a8q8v-MuiCardContent-root {
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 100px) and (max-width: 524px) {
+  .css-8atqhb .MuiPaper-root.MuiPaper-elevation.css-x6ehzb {
+    flex-direction: column;
+  }
+  div.css-8atqhb div.MuiCardContent-root .css-1k0n1bz,
+  div.css-8atqhb div.MuiCardContent-root .css-1f9aa7l {
     width: 100%;
   }
 }
