@@ -1,7 +1,7 @@
 import React, {Fragment} from 'react';
 import PropTypes from 'prop-types';
 import {useDispatch} from 'react-redux';
-import {Navigate, Link, useNavigate} from 'react-router-dom';
+import {Navigate, Link} from 'react-router-dom';
 import {
   Box,
   Card,
@@ -30,7 +30,7 @@ import UpDownVote from '../shared/UpDownVote';
 
 const PostCard = ({post}) => {
   const dispatch = useDispatch();
-  const navigate = useNavigate();
+
   const {
     id,
     title,
@@ -46,10 +46,6 @@ const PostCard = ({post}) => {
   const deletePost = (id) => {
     dispatch(handleDeletePost(id));
     return <Navigate to='/' />;
-  };
-
-  const editPost = (id) => {
-    return navigate(`${category}/${id}/edit`);
   };
 
   const upVotePost = (id) => {
@@ -122,8 +118,10 @@ const PostCard = ({post}) => {
                   </IconButton>
                 </Tooltip>
                 <Tooltip title='Edit' arrow id='Edit'>
-                  <IconButton size='small' onClick={() => editPost(id)}>
-                    <CreateIcon fontSize='small' />
+                  <IconButton size='small'>
+                    <Link to={`/${category}/${id}`} style={{color: 'inherit'}}>
+                      <CreateIcon fontSize='small' />
+                    </Link>
                   </IconButton>
                 </Tooltip>
               </Icon>

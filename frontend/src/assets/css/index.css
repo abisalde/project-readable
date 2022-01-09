@@ -20,6 +20,12 @@ a {
   text-decoration: none;
 }
 
+main {
+  display: block;
+  margin-bottom: 7rem;
+  position: relative;
+}
+
 @font-face {
   font-family: 'Pushster';
   font-style: normal;
