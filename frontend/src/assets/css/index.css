@@ -46,11 +46,11 @@ a {
 }
 
 @media screen and (min-width: 100px) and (max-width: 524px) {
-  .css-8atqhb .MuiPaper-root.MuiPaper-elevation.css-x6ehzb {
+  div.css-8atqhb .MuiPaper-root.MuiPaper-elevation.css-x6ehzb {
     flex-direction: column;
   }
-  div.css-8atqhb div.MuiCardContent-root .css-1k0n1bz,
-  div.css-8atqhb div.MuiCardContent-root .css-1f9aa7l {
+  div.css-8atqhb div.MuiCardContent-root.css-1k0n1bz,
+  div.css-8atqhb div.MuiCardContent-root.css-1f9aa7l {
     width: 100%;
   }
 }
