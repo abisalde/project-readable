@@ -1,5 +1,7 @@
 import React, {Fragment} from 'react';
 import PropTypes from 'prop-types';
+
+// Material UI components
 import {
   FormControl,
   FormControlLabel,
