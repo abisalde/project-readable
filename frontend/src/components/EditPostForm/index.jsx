@@ -11,6 +11,7 @@ import {
   Box,
 } from '@mui/material';
 import {handleUpdatePost} from '../../redux/actions/posts';
+import PageNotFound from '../../views/404';
 
 const EditPostForm = ({post}) => {
   const dispatch = useDispatch();
@@ -60,6 +61,10 @@ const EditPostForm = ({post}) => {
 
   if (postEdited === true) {
     return <Navigate replace to='/' />;
+  }
+
+  if (post.id === null) {
+    return <PageNotFound />;
   }
 
   return (

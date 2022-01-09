@@ -5,7 +5,31 @@ import styles from './styles.module.css';
 export const Layout = ({children}) => {
   return (
     <Fragment>
-      <div className={styles.wrapper}>{children}</div>
+      <main className={styles.wrapper}>{children}</main>
+      <footer
+        style={{
+          position: `relative`,
+          width: `100%`,
+          bottom: 0,
+          marginTop: `3rem`,
+          backgroundColor: `#61564C`,
+          color: `#fff`,
+          padding: `1.5rem 0`,
+          fontSize: `1.125rem`,
+          fontWeight: 600,
+        }}
+      >
+        <div className={styles.wrapper}>
+          © {new Date().getFullYear()}, Developed by
+          {` `}
+          <a
+            style={{color: `rgb(242, 104, 6)`}}
+            href='https://twitter.com/abisalde'
+          >
+            Abisalde
+          </a>
+        </div>
+      </footer>
     </Fragment>
   );
 };

@@ -13,6 +13,7 @@ import CategoryTab from '../components/CategoryTab';
 import Layout from '../components/Layout';
 import CommentsBoxForm from '../components/CommentsBoxForm';
 import CommentsList from '../components/CommentsList';
+import PageNotFound from './404';
 
 // styles
 import {Container, CommentsContainer} from '../components/shared/styles';
@@ -28,6 +29,10 @@ const PostContent = () => {
     dispatch(handleGetPostById(id));
     dispatch(handleGetAllComments(id));
   }, [dispatch, id]);
+
+  if (post.id === null) {
+    return <PageNotFound />;
+  }
 
   return (
     <Fragment>

@@ -40,10 +40,10 @@ const Navigation = () => {
         <TopNav title='Readable Blog' />
         <Routes>
           <Route path='/' element={<App />} />
-          <Route path=':category' element={<PostCategory />} />
-          <Route path='new' element={<NewPost />} />
-          <Route path=':category/:id' element={<PostContent />} />
-          <Route path=':category/:id/edit' element={<EditPost />} />
+          <Route path='/:category' element={<PostCategory />} />
+          <Route path='/new' element={<NewPost />} />
+          <Route path='/:category/:id' element={<PostContent />} />
+          <Route path='/:category/:id/edit' element={<EditPost />} />
           <Route path='*' element={<PageNotFound />} />
           <Route path='api/*' element={<PageNotFound />} />
         </Routes>
