@@ -118,8 +118,14 @@ const PostCard = ({post}) => {
                   </IconButton>
                 </Tooltip>
                 <Tooltip title='Edit' arrow id='Edit'>
-                  <IconButton size='small'>
-                    <Link to={`/${category}/${id}`} style={{color: 'inherit'}}>
+                  <IconButton
+                    size='small'
+                    sx={{display: 'flex', alignItems: 'center'}}
+                  >
+                    <Link
+                      to={`/${category}/${id}/edit`}
+                      style={{color: 'inherit'}}
+                    >
                       <CreateIcon fontSize='small' />
                     </Link>
                   </IconButton>

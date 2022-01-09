@@ -24,6 +24,7 @@ main {
   display: block;
   margin-bottom: 7rem;
   position: relative;
+  height: 100%;
 }
 
 @font-face {
