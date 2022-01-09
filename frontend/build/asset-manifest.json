@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/static/css/main.bc41a6b6.css",
-    "main.js": "/static/js/main.e656cbdd.js",
+    "main.css": "/static/css/main.2ef5d4cb.css",
+    "main.js": "/static/js/main.db7ab9bc.js",
     "static/media/Pushster-Regular.ttf": "/static/media/Pushster-Regular.03c38496322925fec242.ttf",
     "index.html": "/index.html",
-    "main.bc41a6b6.css.map": "/static/css/main.bc41a6b6.css.map",
-    "main.e656cbdd.js.map": "/static/js/main.e656cbdd.js.map"
+    "main.2ef5d4cb.css.map": "/static/css/main.2ef5d4cb.css.map",
+    "main.db7ab9bc.js.map": "/static/js/main.db7ab9bc.js.map"
   },
   "entrypoints": [
-    "static/css/main.bc41a6b6.css",
-    "static/js/main.e656cbdd.js"
+    "static/css/main.2ef5d4cb.css",
+    "static/js/main.db7ab9bc.js"
   ]
 }

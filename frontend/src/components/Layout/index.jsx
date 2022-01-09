@@ -8,7 +8,7 @@ export const Layout = ({children}) => {
       <main className={styles.wrapper}>{children}</main>
       <footer
         style={{
-          position: `relative`,
+          position: `fixed`,
           width: `100%`,
           bottom: 0,
           marginTop: `3rem`,
